@@ -1,8 +1,5 @@
 version: '2'
-volumes:
-    /opt/home_assistant/:
-    /etc/localtime:
-    /media/usbstick/container/ssl:
+
 services:
   homeassistant:
     image: homeassistant/raspberrypi3-homeassistant:latest
@@ -10,6 +7,6 @@ services:
     restart: always
     network_mode: host
     volumes:
-      - /opt/home_assistant/:/config
+      - /opt/home_assistant:/config
       - /etc/localtime:/etc/localtime:ro
       - /media/usbstick/container/ssl:/ssl

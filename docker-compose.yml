@@ -1,4 +1,6 @@
 version: '2'
+volumes:
+    balena-data:
 
 services:
   homeassistant:
@@ -7,5 +9,4 @@ services:
     restart: always
     network_mode: host
     volumes:
-      - /usr/src/app/config:/config
-      - /etc/localtime:/etc/localtime:ro
+      - balena-data:/config

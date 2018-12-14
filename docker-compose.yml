@@ -6,7 +6,3 @@ services:
     container_name: homeassistant
     restart: always
     network_mode: host
-    volumes:
-      - opt/home_assistant:/config
-      - etc/localtime:/etc/localtime:ro
-      - media/usbstick/container/ssl:/ssl

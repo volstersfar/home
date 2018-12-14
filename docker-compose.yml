@@ -1,29 +1,5 @@
-version: "2"
-volumes:
-    resin-data:
-  config:
-    driver: local
-  log:
-    driver: local
-  log2:
-    driver: local
-  run:
-    driver: local
-  run2:
-    driver: local
-  work:
-    driver: local
+version: '2'
 services:
-  hassio:
-    privileged: true
-    restart: always
-    build: ./resin-homeassistant
-    expose:
-      - 80
-    ports:
-      - 80:8123
-    volumes:
-      - resin-data:/data
   unifi:
     image: ryansch/unifi-rpi:latest
     container_name: unifi
@@ -37,3 +13,16 @@ services:
       - run:/usr/lib/unifi/run
       - run2:/run/unifi
       - work:/usr/lib/unifi/work
+volumes:
+  config:
+    driver: local
+  log:
+    driver: local
+  log2:
+    driver: local
+  run:
+    driver: local
+  run2:
+    driver: local
+  work:
+    driver: local

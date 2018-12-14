@@ -1,0 +1,15 @@
+version: "2"
+volumes:
+    resin-data:
+services:
+
+  hass:
+    privileged: true
+    restart: always
+    build: ./resin-homeassistant
+    expose:
+      - 80
+    ports:
+      - 80:8123
+    volumes:
+      - resin-data:/data

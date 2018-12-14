@@ -3,7 +3,7 @@ volumes:
     resin-data:
 services:
 
-  hass:
+  hassio:
     privileged: true
     restart: always
     build: ./resin-homeassistant

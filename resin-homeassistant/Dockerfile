@@ -1,4 +1,4 @@
-FROM homeassistant/raspberrypi3-homeassistant:latest
+FROM homeassistant/raspberrypi3-homeassistant:0.81.6
 
 WORKDIR /usr/src/app
 

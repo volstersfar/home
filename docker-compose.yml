@@ -1,8 +1,19 @@
 version: "2"
 volumes:
     resin-data:
+  config:
+    driver: local
+  log:
+    driver: local
+  log2:
+    driver: local
+  run:
+    driver: local
+  run2:
+    driver: local
+  work:
+    driver: local
 services:
-
   hassio:
     privileged: true
     restart: always
@@ -13,3 +24,16 @@ services:
       - 80:8123
     volumes:
       - resin-data:/data
+  unifi:
+    image: ryansch/unifi-rpi:latest
+    container_name: unifi
+    restart: always
+    network_mode: host
+    volumes:
+      # Unifi v5.0.7 creates all of these directories (some remain empty)
+      - config:/var/lib/unifi
+      - log:/usr/lib/unifi/logs
+      - log2:/var/log/unifi
+      - run:/usr/lib/unifi/run
+      - run2:/run/unifi
+      - work:/usr/lib/unifi/work

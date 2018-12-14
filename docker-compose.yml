@@ -1,6 +1,6 @@
 version: "2"
 volumes:
-    resin-data:
+    resin-data1:
 services:
 
   hassio:
@@ -12,4 +12,4 @@ services:
     ports:
       - 80:8123
     volumes:
-      - resin-data:/data
+      - resin-data1:/data

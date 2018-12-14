@@ -6,6 +6,6 @@ services:
     container_name: homeassistant
     restart: always
     network_mode: host
-      volumes:
-        - /usr/src/app/config:/config
-        - /etc/localtime:/etc/localtime:ro
+    volumes:
+      - /usr/src/app/config:/config
+      - /etc/localtime:/etc/localtime:ro

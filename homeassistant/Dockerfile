@@ -1,14 +1,4 @@
 FROM homeassistant/raspberrypi3-homeassistant:latest
-ENV LANG="en_US.UTF-8" \
-LC_ALL="en_US.UTF-8" \
-LANGUAGE="en_US.UTF-8"
-
-RUN apk -U upgrade && \
-apk --update add nano && \
-rm -rf /var/cache/apk/*
-
-RUN mkdir -p /data
+RUN mkdir /data
+ADD ./configuration.yaml /data/configuration.yaml
 VOLUME /data
-WORKDIR /data
-
-ENTRYPOINT ["nano"]

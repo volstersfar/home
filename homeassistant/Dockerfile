@@ -1,4 +1,4 @@
 FROM homeassistant/raspberrypi3-homeassistant:latest
 RUN mkdir /data
-COPY configuration.yaml /data/configuration.yaml
+COPY configuration.yaml /data/
 VOLUME /data

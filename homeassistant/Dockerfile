@@ -1,4 +1,14 @@
 FROM homeassistant/raspberrypi3-homeassistant:latest
-RUN apt-get update && \
-  apt-get install -y --no-install-recommends \
-  nano
+ENV LANG="en_US.UTF-8" \
+LC_ALL="en_US.UTF-8" \
+LANGUAGE="en_US.UTF-8"
+
+RUN apk -U upgrade && \
+apk --update add nano && \
+rm -rf /var/cache/apk/*
+
+RUN mkdir -p /data
+VOLUME /data
+WORKDIR /data
+
+ENTRYPOINT ["nano"]

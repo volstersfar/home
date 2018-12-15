@@ -3,7 +3,7 @@ volumes:
     balena-data:
 services:
   homeassistant:
-    image: homeassistant/raspberrypi3-homeassistant
+    build: ./homeassistant
     container_name: homeassistant
     restart: always
     network_mode: host

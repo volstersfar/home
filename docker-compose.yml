@@ -1,18 +1,10 @@
 version: '2'
 volumes:
     balena-data:
-
 services:
   homeassistant:
-    image: homeassistant/raspberrypi3-homeassistant:latest
+    build: ./homeassistant
     container_name: homeassistant
-    restart: always
-    network_mode: host
-    volumes:
-      - balena-data:/config
-  vim:
-    image: thinca/vim:latest
-    container_name: vim
     restart: always
     network_mode: host
     volumes:

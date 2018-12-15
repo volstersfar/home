@@ -10,3 +10,10 @@ services:
     network_mode: host
     volumes:
       - balena-data:/config
+  vim:
+    image: thinca/vim:latest
+    container_name: vim
+    restart: always
+    network_mode: host
+    volumes:
+      - balena-data:/config

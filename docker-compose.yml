@@ -9,10 +9,3 @@ services:
     network_mode: host
     volumes:
       - balena-data:/config
-  unifi:
-    image: ryansch/unifi-rpi
-    container_name: unifi
-    restart: always
-    network_mode: host
-    volumes:
-      - balena-data:/data

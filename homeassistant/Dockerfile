@@ -1,3 +1,5 @@
 FROM homeassistant/raspberrypi3-homeassistant:latest
-COPY configuration.yaml /data
+WORKDIR /usr/src/app
+
+COPY ./configuration.yaml ./
 

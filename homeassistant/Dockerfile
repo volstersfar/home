@@ -1,2 +1,2 @@
 FROM homeassistant/raspberrypi3-homeassistant:latest
-ADD configuration.yaml
+ADD configuration.yaml configuration.yaml

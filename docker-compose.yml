@@ -10,7 +10,7 @@ services:
     volumes:
       - balena-data:/config
   unifi:
-    image: linuxserver/unifi
+    image: ryansch/unifi-rpi
     container_name: unifi
     restart: always
     network_mode: host

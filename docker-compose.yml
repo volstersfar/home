@@ -1,6 +1,6 @@
 version: '2'
 volumes:
-    hass-data1:
+    hass-config:
 services:
   homeassistant:
     build: ./homeassistant
@@ -8,4 +8,4 @@ services:
     restart: always
     network_mode: host
     volumes:
-      - hass-data1:/data
+      - hass-config:/config

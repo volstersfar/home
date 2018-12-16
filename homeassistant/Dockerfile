@@ -1,6 +1,6 @@
 FROM homeassistant/raspberrypi3-homeassistant:latest
-RUN mkdir /data
-ADD configuration.yaml /data
-VOLUME /data
+RUN mkdir /config
+ADD configuration.yaml /config
+VOLUME /config
 
 

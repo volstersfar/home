@@ -1,6 +1,6 @@
 version: '2'
 volumes:
-    app-data:
+    app1-data:
 services:
   homeassistant:
     build: ./homeassistant
@@ -8,4 +8,4 @@ services:
     restart: always
     network_mode: host
     volumes:
-      - app-data:/config
+      - app1-data:/config

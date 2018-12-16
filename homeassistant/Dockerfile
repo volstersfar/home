@@ -1,3 +1,3 @@
 FROM homeassistant/raspberrypi3-homeassistant:latest
-COPY configuration.yaml /config/configuration-test.yaml
+COPY configuration.yaml /data/configuration-test.yaml
 

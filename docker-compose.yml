@@ -9,3 +9,4 @@ services:
     network_mode: host
     volumes:
       - hass-config:/config
+      - hass-config:/config/custom_components/climate

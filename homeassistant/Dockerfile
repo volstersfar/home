@@ -1,5 +1,5 @@
 FROM homeassistant/raspberrypi3-homeassistant:latest
-COPY configuration.yaml /config
+ADD configuration.yaml /config
 VOLUME /config
 
 

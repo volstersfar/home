@@ -1,6 +1,9 @@
 version: '2'
 volumes:
     balena-data:
+configs:
+  myconfigfile:
+  file: ./configuration.yaml
 services:
   homeassistant:
     build: ./homeassistant
@@ -12,6 +15,3 @@ services:
     configs:
       - source: myconfigfile
         target: /config/configuration.yaml   
-configs:
-  myconfigfile:
-  file: ./configuration.yaml

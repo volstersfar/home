@@ -8,4 +8,4 @@ services:
     restart: always
     network_mode: host
     volumes:
-      - balena-data:/config
+ #     - balena-data:/config

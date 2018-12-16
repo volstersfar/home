@@ -1,9 +1,6 @@
 version: '2'
 volumes:
-    balena-data:
-configs:
-  myconfigfile:
-  file: ./configuration.yaml
+    app-data:
 services:
   homeassistant:
     build: ./homeassistant
@@ -11,7 +8,4 @@ services:
     restart: always
     network_mode: host
     volumes:
-      - balena-data:/config
-    configs:
-      - source: myconfigfile
-        target: /config/configuration.yaml   
+      - app-data:/config

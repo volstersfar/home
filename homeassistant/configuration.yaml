@@ -34,8 +34,13 @@ updater:
 discovery:
   enable:
     - homekit
-homekit:
+homekit: 
 # Allows you to issue voice commands from the frontend in enabled browsers
+climate:
+    -platform: melcloud
+    email: danieltomasjohansson@gmail.com
+    password: Morransmor88!
+    
 conversation:
 
 # Enables support for tracking state changes over time.

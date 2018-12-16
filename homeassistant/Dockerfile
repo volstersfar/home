@@ -1,3 +1,3 @@
 FROM homeassistant/raspberrypi3-homeassistant:latest
-ADD configuration.yaml /config
+ADD ./custom_components/climate/melcloud.py /config/custom_components/climate/
 VOLUME /config

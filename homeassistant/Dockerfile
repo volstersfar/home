@@ -1,2 +1,2 @@
 FROM homeassistant/raspberrypi3-homeassistant:latest
-COPY /custom_components /config/custom_components
+COPY custom_components /config

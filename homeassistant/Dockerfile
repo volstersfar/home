@@ -1,6 +1,7 @@
 FROM homeassistant/raspberrypi3-homeassistant:latest
 VOLUME /config
-RUN rm ./config/configuration.yaml
+WORKDIR /config
+RUN rm configuration.yaml
 COPY configuration.yaml /config
 VOLUME /config
 

@@ -9,9 +9,9 @@ services:
     network_mode: host
     volumes:
       - balena-data:/config
-  configs:
+    configs:
       - source: myconfigfile
         target: /config/configuration.yaml   
-    configs:
-        myconfigfile:
-        file: ./configuration.yaml
+configs:
+  myconfigfile:
+  file: ./configuration.yaml

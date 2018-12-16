@@ -7,5 +7,4 @@ services:
     container_name: homeassistant
     restart: always
     network_mode: host
-    volumes:
- #     - balena-data:/config
+

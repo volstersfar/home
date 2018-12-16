@@ -1,3 +1,3 @@
 FROM homeassistant/raspberrypi3-homeassistant:latest
-COPY custom_components /config/custom_components
+ADD custom_components /config/custom_components
 VOLUME /config/custom_components

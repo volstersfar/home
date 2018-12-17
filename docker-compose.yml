@@ -1,18 +1,6 @@
 version: '2'
 volumes:
   hass-config:
-  config:
-    driver: local
-  log:
-    driver: local
-  log2:
-    driver: local
-  run:
-    driver: local
-  run2:
-    driver: local
-  work:
-    driver: local
 services:
   homeassistant:
     build: ./homeassistant
@@ -22,15 +10,20 @@ services:
     volumes:
       - hass-config:/config
   unifi:
-    image: goofball222/unifi:latest
+    image: goofball222/unifi
     container_name: unifi
-    restart: always
-    network_mode: host
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 3478:3478/udp
+      - 8080:8080
+      - 8443:8443
+      - 8880:8880
+      - 8843:8843
     volumes:
-      # Unifi v5.0.7 creates all of these directories (some remain empty)
-      - config:/var/lib/unifi
-      - log:/usr/lib/unifi/logs
-      - log2:/var/log/unifi
-      - run:/usr/lib/unifi/run
-      - run2:/run/unifi
-      - work:/usr/lib/unifi/work
+      - /etc/localtime:/etc/localtime:ro
+      - ./cert:/usr/lib/unifi/cert
+      - ./data:/usr/lib/unifi/data
+      - ./logs:/usr/lib/unifi/logs
+    environment:
+      - TZ=UTC

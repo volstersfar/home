@@ -1,6 +1,10 @@
 version: '2'
 volumes:
   hass-config:
+  unifi-cert:
+  unifi-data:
+  unifi-logs:
+  
 services:
   homeassistant:
     build: ./homeassistant
@@ -22,8 +26,8 @@ services:
       - 8843:8843
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./cert:/usr/lib/unifi/cert
-      - ./data:/usr/lib/unifi/data
-      - ./logs:/usr/lib/unifi/logs
+      - unifi-cert:/usr/lib/unifi/cert
+      - unifi-data:/usr/lib/unifi/data
+      - unifi-logs:/usr/lib/unifi/logs
     environment:
       - TZ=UTC

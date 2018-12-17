@@ -1,6 +1,18 @@
 version: '2'
 volumes:
-    hass-config:
+  hass-config:
+  config:
+    driver: local
+  log:
+    driver: local
+  log2:
+    driver: local
+  run:
+    driver: local
+  run2:
+    driver: local
+  work:
+    driver: local
 services:
   homeassistant:
     build: ./homeassistant
@@ -22,16 +34,3 @@ services:
       - run:/usr/lib/unifi/run
       - run2:/run/unifi
       - work:/usr/lib/unifi/work
-volumes:
-  config:
-    driver: local
-  log:
-    driver: local
-  log2:
-    driver: local
-  run:
-    driver: local
-  run2:
-    driver: local
-  work:
-    driver: local

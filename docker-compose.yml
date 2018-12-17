@@ -22,7 +22,7 @@ services:
     volumes:
       - hass-config:/config
   unifi:
-    image: ryansch/jacobalberty/unifi:latest
+    image: jacobalberty/unifi:latest
     container_name: unifi
     restart: always
     network_mode: host

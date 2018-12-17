@@ -4,6 +4,7 @@ volumes:
   unifi-cert:
   unifi-data:
   unifi-logs:
+  mongodb:
   
 services:
   homeassistant:
@@ -21,7 +22,7 @@ services:
 #   Enable this to have the services/containers use the existing docker0/default bridge network.
 #    network_mode: bridge
     volumes:
-      - ./data/db:/data/db
+      - mongodb:/data/db
 
   unifi:
     image: goofball222/unifi

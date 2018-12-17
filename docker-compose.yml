@@ -25,7 +25,6 @@ services:
       - 8880:8880
       - 8843:8843
     volumes:
-      - /etc/localtime:/etc/localtime:ro
       - unifi-cert:/usr/lib/unifi/cert
       - unifi-data:/usr/lib/unifi/data
       - unifi-logs:/usr/lib/unifi/logs

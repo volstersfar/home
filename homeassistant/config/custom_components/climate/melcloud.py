@@ -429,7 +429,7 @@ class MelCloudClimate(ClimateDevice):
 
 	@property
 	def name(self):
-		return "MELCloud " + self._device.getFriendlyName() + " (" + str(self._device.getID()) + ")"
+		return self._device.getFriendlyName()
 
 	@property
 	def temperature_unit(self):

@@ -14,7 +14,6 @@ homeassistant:
   time_zone: Europe/Stockholm
 
 # Show links to resources in log and frontend
-introduction:
 
 # Enables the frontend
 frontend:
@@ -32,9 +31,6 @@ http:
 updater:
         
 # Discover some devices automatically
-discovery:
-  enable:
-    - homekit
 homekit:
   filter:
     include_domains:
@@ -45,11 +41,9 @@ homekit:
 climate:
   - platform: melcloud
     email: danieltomasjohansson@gmail.com
-    password: Morransmor88!
-    
+    password: Morransmor88! 
   - platform: mqtt
     name: "Värmepump Källare"
-    optimistic: false
     retain: false
     qos: 0
     payload_on: 1
@@ -90,20 +84,12 @@ sun:
 sensor:
   - platform: mqtt
     name: "room_temp"
-    friendly_name: "Rumstemperatur"
     device_class: temperature
     state_topic: "emon/PID/temperature2"
   - platform: mqtt  
     name: "set_temp"
-    friendly_name: "Inställd Temperatur"
-    state_topic: "emon/PID/setPoint"
-
-    
+    state_topic: "emon/PID/setPoint"  
   - platform: yr
-
-# Text to speech
-tts:
-  platform: google
   
 mqtt:
   broker: 192.168.2.6
